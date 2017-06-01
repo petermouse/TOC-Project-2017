@@ -50,11 +50,6 @@ After that, `ngrok` would generate a https URL.
 
 You should set `WEBHOOK_URL` (line 11 in app.py) to `your-https-URL/hook`.
 
-```
-API_TOKEN = '383537012:AAFzocUZyF14VUSIWaz8bw3H94eElibhjLc'
-WEBHOOK_URL = 'https://610cef08.ngrok.io/hook'
-```
-
 #### Run the server
 
 ```sh
