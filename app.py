@@ -14,33 +14,75 @@ app = Flask(__name__)
 bot = telegram.Bot(token=API_TOKEN)
 machine = TocMachine(
     states=[
-        'user',
-        'state1',
-        'state2'
+        'init',
+        'qr_year',
+        'qr_month',
+        'qr_result',
+        'qa_board',
+        'qa_push_num',
+        'qa_result',
+        'qw_word',
+        'qw_result'
     ],
     transitions=[
         {
             'trigger': 'advance',
-            'source': 'user',
-            'dest': 'state1',
-            'conditions': 'is_going_to_state1'
+            'source': 'init',
+            'dest': 'qr_year',
+            'conditions': 'if_do_query_receipt'
         },
         {
             'trigger': 'advance',
-            'source': 'user',
-            'dest': 'state2',
-            'conditions': 'is_going_to_state2'
+            'source': 'qr_year',
+            'dest': 'qr_month',
+            'conditions': 'if_year_valid'
+        },
+        {
+            'trigger': 'advance',
+            'source': 'qr_month',
+            'dest': 'qr_result',
+            'conditions': 'if_month_valid'
+        },
+        {
+            'trigger': 'advance',
+            'source': 'init',
+            'dest': 'qa_board',
+            'conditions': 'if_do_query_article'
+        },
+        {
+            'trigger': 'advance',
+            'source': 'qa_board',
+            'dest': 'qa_push_num',
+            'conditions': 'if_board_valid'
+        },
+        {
+            'trigger': 'advance',
+            'source': 'qa_push_num',
+            'dest': 'qa_result',
+            'conditions': 'if_push_num_valid'
+        },
+        {
+            'trigger': 'advance',
+            'source': 'init',
+            'dest': 'qw_word',
+            'conditions': 'if_do_query_word'
+        },
+        {
+            'trigger': 'advance',
+            'source': 'qw_word',
+            'dest': 'qw_result'
         },
         {
             'trigger': 'go_back',
             'source': [
-                'state1',
-                'state2'
+                'qr_result',
+                'qa_result',
+                'qw_result'
             ],
-            'dest': 'user'
+            'dest': 'init'
         }
     ],
-    initial='user',
+    initial='init',
     auto_transitions=False,
     show_conditions=True,
 )
