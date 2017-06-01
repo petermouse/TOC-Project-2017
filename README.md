@@ -76,13 +76,13 @@ Finally, if the result has sent to the user, states will `go_back` to `init` sta
 ## Snapshots
 
 Sequence of actions started from typing "1" at `init` state
-<img src="img/snapshot-1.png" width="1164" height="927">
+![snapshot-1](img/snapshot-1.png)
 
 Sequence of actions started from typing "2" at `init` state
-<img src="img/snapshot-2.png" width="1161" height="923">
+![snapshot-2](img/snapshot-2.png)
 
 Sequence of actions started from typing "3" at `init` state
-<img src="img/snapshot-3.png" width="1162" height="927">
+![snapshot-3](img/snapshot-3.png)
 
 ## Author
 [petermouse](https://github.com/petermouse)
