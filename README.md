@@ -40,7 +40,7 @@ You can either setup https server or using [`ngrok`](https://ngrok.com/) as a pr
 
 **`ngrok` would be used in the following instruction**
 
-**(or run the executable file with same parameters)**
+**(or run the executable file with same arguments)**
 
 ```sh
 ngrok http 5000
@@ -55,7 +55,7 @@ API_TOKEN = '383537012:AAFzocUZyF14VUSIWaz8bw3H94eElibhjLc'
 WEBHOOK_URL = 'https://610cef08.ngrok.io/hook'
 ```
 
-#### Run the sever
+#### Run the server
 
 ```sh
 python3 app.py
@@ -73,13 +73,18 @@ If the user entered "1", "2" or "3", `init` is triggered to `advance` to the cor
 
 Finally, if the result has sent to the user, states will `go_back` to `init` state
 
-## Snapshot
+## Snapshots
 
-![snapshot-1](./img/snapshot-1.png)
-![snapshot-2](./img/snapshot-2.png)
-![snapshot-3](./img/snapshot-3.png)
+Sequence of actions started from typing "1" at `init` state
+<img src="img/snapshot-1.png" width="1164" height="927">
+
+Sequence of actions started from typing "2" at `init` state
+<img src="img/snapshot-2.png" width="1161" height="923">
+
+Sequence of actions started from typing "3" at `init` state
+<img src="img/snapshot-3.png" width="1162" height="927">
 
 ## Author
 [petermouse](https://github.com/petermouse)
 
-The template is provided by [Lee-W](https://github.com/Lee-W)
+The project template is provided by [Lee-W](https://github.com/Lee-W)
